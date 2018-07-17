@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
   char str1[10], str2[10], choice;
-  int i,j;
+  int i,j,l1,l2;
   cout<<"Enter string 1: ";
   cin>>str1;
   cout<<"Enter string 2: ";
@@ -20,7 +20,9 @@ switch(choice)
         {
           for(i=0;str1[i]!='\0';i++);
           for(j=0;str2[j]!='\0';j++);
-          cout<<"The length of the string 1 is "<<i<<".\n"<<"The length of the string 2 is "<<j<<"."<<endl;
+          l1=i;
+          l2=j;
+          cout<<"The length of the string 1 is "<<l1<<".\n"<<"The length of the string 2 is "<<l2<<"."<<endl;
           break;
         }
     case 'c': //Moves string 1 to string 2
@@ -75,6 +77,19 @@ switch(choice)
           cout<<"Copied string: "<<str2<<endl;
           break;
         }
+    /*case 'g': //To reverse string
+        {
+          int len=length(a);
+    			char temp;
+    			int j=len-1;
+    			for(int i=0;i<(len/2);i++)
+    			{
+    				temp=a[i];
+    				a[i]=a[j];
+    				a[j]=temp;
+    				j--;
+    			}
+        }*/
   }
 return 0;
 }
