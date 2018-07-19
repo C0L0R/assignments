@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-  char str1[10], str2[10], choice;
+  char str1[10], str2[10],choice;
   int i,j,l1,l2;
   cout<<"Enter string 1: ";
   cin>>str1;
