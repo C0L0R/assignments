@@ -1,29 +1,33 @@
 #include<iostream>
 using namespace std;
+
 class student
-{int a[50],b,c,d,e,x[50],h,f,l,ab,y[50];
-public:
-void intake()
-{     d=0;
-		cout<<"enter the number of student"<<endl;
+{
+	int a[50],b,c,d,e,x[50],h,f,l,ab,y[50];
+	public:
+		void intake()
+{
+	d=0;
+		cout<<"Enter the number of student(s): ";
 		cin>>b;
-		cout<<"NOTE :: enter negative for abscent student"<<endl;
-		cout<<"enter the marks of student"<<endl;
+		cout<<"\nNOTE :: Enter negative for absent students. \n"<<endl;
+		cout<<"Enter the marks of students: ";
 		for(c=0;c<b;c++)
 			cin>>a[c];
 }
-void abscent()
-{     int z[50];
+		void absent()
+{
+	int z[50];
 		for(c=0;c<b;c++)
 					z[c]=a[c];
 		for(c=0;c<b;c++)
 		{   if(z[c]<0)
 				d++;
 		}
-		cout<<"the number of abscent student is"<<d<<endl;
+		cout<<"\nThe number of absent student is "<<d<<"."<<endl;
 }
 void marks()
-{   int marks;
+{   float marks;
 	float avg;
 		d=b;
 		for(c=0;c<b;c++)
@@ -41,7 +45,7 @@ void marks()
 			marks=marks+y[c];
 		}
 		avg=marks/d;
-		cout<<"the avg of all student is"<<avg<<endl;
+		cout<<"\nThe average of all student is "<<avg<<" ."<<endl;
 }
 void highlow()
 {   l=b;
@@ -61,8 +65,8 @@ void highlow()
 			}
 		}
 	}
-	cout<<"highest"<<a[0]<<endl;
-	cout<<" lowest"<<a[l-1]<<endl;
+	cout<<"\nHighest mark: "<<a[0]<<endl;
+	cout<<"Lowest mark: "<<a[l-1]<<endl;
 }
 void max()
 {   int x[50],m,o,n,f,w[50];
@@ -110,11 +114,11 @@ void max()
 				}
 			}
 		}
-	cout<<"the"<<a[0]<<"is repeated maximum"<<x[0]<<"times"<<endl;
+	cout<<"\nThe "<<a[0]<<" is repeated maximum "<<x[0]<<" times."<<endl;
 	for(c=1;c<ab;c++)
 	{  if(x[0]==x[c]&&a[0]!=a[c])
 	   {
-	       cout<<"the"<<a[c]<<"is repeated maximum"<<x[c]<<"times"<<endl;
+	       cout<<"\nThe "<<a[c]<<" is repeated maximum "<<x[c]<<" times."<<endl;
 	       a[0]=a[c];
 	   }
 	}
@@ -124,10 +128,12 @@ int main()
 {   int a,b;
     arb.intake();
     do
-    {  cout<<"1.abscent"<<endl<<"2.average"<<endl<<"3.highest"<<endl<<"4.repetation"<<endl;
+    {
+			cout<<"\nSelect option"<<endl;
+			cout<<"1. Number of Absent students"<<endl<<"2. Average marks"<<endl<<"3. Highest & Lowest marks"<<endl<<"4. Marks scored by most students"<<endl;
        cin>>a;
        switch(a)
-       {  case 1:arb.abscent();
+       {  case 1:arb.absent();
 	             break;
           case 2:arb.marks();
 	             break;
@@ -136,7 +142,7 @@ int main()
           case 4:arb.max();
 	             break;
         }
-	    cout<<"do u want to continue enter 1 if u want 0 if u dont";
+	    cout<<"\nDo you want to continue?\nEnter (1) to continue, (2) to exit."<<endl;
 	    cin>>b;
     }while(b==1);
 	return 0;
